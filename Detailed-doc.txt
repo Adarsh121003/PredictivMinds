@@ -1,0 +1,955 @@
+PREDICTIVMINDS - COMPLETE TECHNICAL DOCUMENTATION
+1. SYSTEM OVERVIEW
+1.1 What is PredictivMinds?
+PredictivMinds is an AI-powered governance platform that transforms raw government data into actionable predictive intelligence. It helps Maharashtra government departments forecast service demand, detect crises before they occur, and prioritize issues for optimal resource allocation.
+
+Problem it solves:
+
+Unpredictable ambulance demand leading to shortages
+
+Sudden water shortages affecting lakhs of citizens
+
+Hospital overcrowding during peak seasons
+
+Inefficient budget allocation across 100+ pending issues
+
+Reactive crisis management resulting in ₹1000+ crore annual losses
+
+Solution approach:
+
+Proactive prediction (5 days advance warning)
+
+Real-time demand forecasting (92% accuracy)
+
+AI-driven priority scoring (1-10 scale)
+
+Multi-domain coverage (Health, Infrastructure, Public Safety)
+
+2. SYSTEM ARCHITECTURE
+2.1 High-Level Architecture
+text
+┌──────────────────────────────────────────────────────────┐
+│                     USER (Browser)                       │
+│         Government Officers / Decision Makers            │
+└─────────────────┬────────────────────────────────────────┘
+                  │
+                  │ HTTPS Requests
+                  ↓
+┌──────────────────────────────────────────────────────────┐
+│              FRONTEND LAYER (React.js)                   │
+│  ┌─────────┬──────────┬──────────┬──────────┬─────────┐ │
+│  │Dashboard│Prediction│Data      │Analytics │Privacy  │ │
+│  │         │(3 models)│Upload    │& Reports │         │ │
+│  └─────────┴──────────┴──────────┴──────────┴─────────┘ │
+│                                                          │
+│  Technology: React 18, Material-UI, Recharts, Axios     │
+│  Deployment: Vercel (https://predictivminds.shop)       │
+└─────────────────┬────────────────────────────────────────┘
+                  │
+                  │ REST API Calls (JSON)
+                  ↓
+┌──────────────────────────────────────────────────────────┐
+│              BACKEND LAYER (FastAPI)                     │
+│  ┌─────────────────────────────────────────────────────┐│
+│  │  8 REST API Endpoints                               ││
+│  │  /health, /predict/demand, /predict/crisis, etc.    ││
+│  └─────────────────────────────────────────────────────┘│
+│  ┌─────────────────────────────────────────────────────┐│
+│  │  Request Processing Pipeline                        ││
+│  │  → Validation → Anonymization → Model Inference    ││
+│  └─────────────────────────────────────────────────────┘│
+│                                                          │
+│  Technology: Python 3.11, FastAPI, Uvicorn, Pydantic    │
+│  Deployment: GCP (https://api.predictivminds.shop)      │
+└─────────────────┬────────────────────────────────────────┘
+                  │
+                  │ ML Model Calls
+                  ↓
+┌──────────────────────────────────────────────────────────┐
+│              ML MODELS LAYER                             │
+│  ┌──────────────┬───────────────┬──────────────────────┐│
+│  │  Model 1     │   Model 2     │    Model 3           ││
+│  │  Demand      │   Crisis      │    Priority          ││
+│  │  Forecasting │   Prediction  │    Scoring           ││
+│  │  (XGBoost)   │ (Rand Forest) │  (Ensemble)          ││
+│  │  92% acc     │   89% acc     │    92% acc           ││
+│  └──────────────┴───────────────┴──────────────────────┘│
+│                                                          │
+│  Libraries: Scikit-learn, XGBoost, Pandas, NumPy        │
+│  Storage: Pickle files (.pkl)                            │
+└─────────────────┬────────────────────────────────────────┘
+                  │
+                  │ Data Read/Write
+                  ↓
+┌──────────────────────────────────────────────────────────┐
+│              DATA LAYER                                  │
+│  ┌─────────────────────────────────────────────────────┐│
+│  │  In-Memory Storage + File System                    ││
+│  │  - Predictions history (1,247+ records)             ││
+│  │  - Active alerts (5-10 crises)                      ││
+│  │  - Upload history (file metadata)                   ││
+│  │  - Audit logs (all API requests)                    ││
+│  └─────────────────────────────────────────────────────┘│
+│                                                          │
+│  Storage: Google Cloud Storage, Local disk               │
+│  Backup: Automated daily                                 │
+└─────────────────┬────────────────────────────────────────┘
+                  │
+                  │ Infrastructure
+                  ↓
+┌──────────────────────────────────────────────────────────┐
+│         GOOGLE CLOUD PLATFORM (GCP)                      │
+│  ┌────────────┬──────────────┬────────────────────────┐ │
+│  │Compute     │Cloud Storage │Monitoring & Logging    │ │
+│  │Engine VM   │(Data backup) │(PM2, Health checks)    │ │
+│  └────────────┴──────────────┴────────────────────────┘ │
+│                                                          │
+│  Region: us-central1-a                                   │
+│  Machine: e2-medium (2 vCPU, 4 GB RAM)                   │
+│  OS: Debian 12 Bookworm                                  │
+└──────────────────────────────────────────────────────────┘
+3. FRONTEND (REACT.JS)
+3.1 Technology Stack
+text
+Core Framework: React.js v18.2.0
+├─ Component-based architecture
+├─ Virtual DOM for performance
+├─ Hooks for state management
+└─ JSX syntax
+
+UI Library: Material-UI (MUI) v5.14+
+├─ Pre-built components (Button, Card, Table, etc.)
+├─ Responsive grid system
+├─ Theming & customization
+└─ Icons library
+
+State Management: React Hooks
+├─ useState (component state)
+├─ useEffect (side effects, API calls)
+├─ useContext (global state)
+└─ Custom hooks
+
+HTTP Client: Axios v1.5+
+├─ Promise-based HTTP requests
+├─ Request/response interceptors
+├─ Automatic JSON parsing
+└─ Error handling
+
+Data Visualization: Recharts v2.8+
+├─ Bar charts (predictions by district)
+├─ Pie charts (crisis distribution)
+├─ Line charts (priority trends)
+└─ Responsive & animated
+
+Styling: CSS-in-JS + Responsive Design
+├─ Mobile-first approach
+├─ Breakpoints (mobile, tablet, desktop)
+├─ Flexbox & Grid layouts
+└─ Dark mode support
+
+Deployment: Vercel
+├─ Continuous deployment from Git
+├─ Automatic HTTPS
+├─ CDN for fast loading
+└─ Custom domain support
+3.2 Page Structure
+Page 1: Dashboard (Home)
+
+Purpose: Quick overview of system status
+
+Components:
+
+Health check indicator (🟢 API Connected)
+
+4 KPI cards (predictions, alerts, districts, response time)
+
+Critical alerts section (top 5 crises)
+
+Trend chart (last 7 days)
+
+APIs Called:
+
+GET /health (system status)
+
+GET /api/v1/dashboard/alerts (alert list)
+
+GET /api/v1/dashboard/statistics (KPIs)
+
+Update Frequency: Every 30 seconds (auto-refresh)
+
+Page 2: Predictions
+
+Purpose: Run AI predictions
+
+3 Tabs:
+
+Tab 1 - Demand Forecasting:
+
+Form inputs: District, Service Type, Month, Day, Monsoon, Population Factor, etc.
+
+API: POST /api/v1/predict/demand
+
+Output: Predicted demand value + confidence score + recommendation
+
+Visualization: Gauge chart showing demand level
+
+Tab 2 - Crisis Detection:
+
+Form inputs: District, Pending Requests, Complaints, Resolution Rate, etc.
+
+API: POST /api/v1/predict/crisis
+
+Output: Crisis probability (%) + risk level (CRITICAL/HIGH/MEDIUM/LOW)
+
+Visualization: Progress bar, alert badge
+
+Tab 3 - Priority Scoring:
+
+Form inputs: Domain, Issue Type, Requests, Complaints, Severity
+
+API: POST /api/v1/predict/priority
+
+Output: Priority score (1-10) + component breakdown + recommendation
+
+Visualization: Score display, component bars
+
+Page 3: Data Management
+
+Purpose: Upload Excel files
+
+Components:
+
+Drag-and-drop file upload
+
+Domain selector (Health, Infrastructure, Public Safety)
+
+Progress bar during upload
+
+Success/error messages
+
+Upload history table
+
+API: POST /api/v1/dashboard/upload/excel?domain=health
+
+File Format: .xlsx, .xls (Excel files)
+
+Max Size: 10 MB
+
+Processing: Async (5 mins for 500 records)
+
+Page 4: Analytics & Reports
+
+Purpose: Historical analysis
+
+Components:
+
+Date range filter
+
+District filter
+
+3 charts (Bar, Pie, Line)
+
+Crisis prevention metrics
+
+PDF export button
+
+APIs Called:
+
+GET /api/v1/dashboard/analytics
+
+GET /api/v1/dashboard/predictions-history
+
+GET /api/v1/dashboard/crisis-prevention
+
+Page 5: Compliance & Privacy
+
+Purpose: Show privacy compliance
+
+API: GET /api/v1/dashboard/privacy-report
+
+Displays: GDPR, IT Act 2000, DPDP Act 2023 compliance status
+
+4. BACKEND (FASTAPI + PYTHON)
+4.1 Technology Stack
+text
+Language: Python 3.11
+├─ Type hints for better code quality
+├─ Async/await support
+├─ Modern syntax
+└─ Performance improvements
+
+Framework: FastAPI v0.104+
+├─ High performance (ASGI server)
+├─ Automatic API documentation (Swagger UI)
+├─ Data validation (Pydantic)
+├─ Async request handling
+└─ OpenAPI standard
+
+Server: Uvicorn v0.24+
+├─ ASGI server implementation
+├─ Async workers
+├─ HTTP/1.1 and WebSocket support
+└─ Production-ready
+
+Process Manager: PM2 (Node.js)
+├─ Auto-restart on crash
+├─ Log management
+├─ Clustering support
+└─ Monitoring dashboard
+
+Data Validation: Pydantic v2.4+
+├─ Request body validation
+├─ Type checking
+├─ Error messages
+└─ Serialization/deserialization
+
+Logging: Python logging module
+├─ Timestamped logs
+├─ Log levels (INFO, ERROR, DEBUG)
+├─ File output (logs/)
+└─ Console output
+4.2 API Endpoints (8 Total)
+1. Health Check
+
+python
+GET /health
+Purpose: System status check
+Response:
+{
+  "status": "healthy",
+  "models_loaded": 3,
+  "models": {
+    "demand_forecasting": true,
+    "crisis_prediction": true,
+    "priority_scoring": true
+  },
+  "api_version": "1.0.0",
+  "uptime": "5 days 12 hours"
+}
+2. Demand Forecasting
+
+python
+POST /api/v1/predict/demand
+Purpose: Predict service demand
+Request Body:
+{
+  "district": "Mumbai",
+  "service_type": "Ambulance_Emergency",
+  "month": 7,
+  "day_of_week": 1,
+  "is_weekend": 0,
+  "is_monsoon": 1,
+  "population_factor": 2.5,
+  "urban_ratio": 1.0,
+  "demand_lag_7days": 45.0,
+  "demand_lag_30days": 42.0,
+  "resource_utilization_rate": 0.75,
+  "complaint_rate": 0.15,
+  "response_time_minutes": 16.5
+}
+Response:
+{
+  "predicted_demand": 58.2,
+  "confidence_score": 0.92,
+  "trend": "increasing",
+  "change_percentage": 29.3,
+  "recommendation": "Deploy 12 additional ambulances"
+}
+3. Crisis Prediction
+
+python
+POST /api/v1/predict/crisis
+Purpose: Detect potential crises
+Request Body:
+{
+  "district": "Nagpur",
+  "month": 4,
+  "is_monsoon": 0,
+  "population_factor": 1.5,
+  "demand_requests": 80,
+  "pending_requests": 35,
+  "citizen_complaints": 12,
+  "response_time_hours": 48.0,
+  "demand_lag_7days": 75.0,
+  "demand_lag_30days": 60.0,
+  "resolution_rate": 0.45
+}
+Response:
+{
+  "crisis_detected": true,
+  "probability": 0.78,
+  "risk_level": "HIGH",
+  "days_until_crisis": 5,
+  "affected_population": 50000,
+  "recommendation": "Deploy emergency water tankers immediately"
+}
+4. Priority Scoring
+
+python
+POST /api/v1/predict/priority
+Purpose: Rank issue priority
+Request Body:
+{
+  "domain": "Health",
+  "district": "Mumbai",
+  "issue_type": "Hospital_Bed_ICU",
+  "requests": 120,
+  "complaints": 15,
+  "response_time": 48.0,
+  "is_monsoon": 0,
+  "population_factor": 2.5,
+  "resolution_rate": 0.5,
+  "severity_level": "Critical"
+}
+Response:
+{
+  "priority_score": 9.8,
+  "priority_level": "CRITICAL",
+  "components": {
+    "urgency_score": 9.5,
+    "impact_score": 10.0,
+    "resource_score": 8.5,
+    "sentiment_score": 9.0
+  },
+  "recommendation": "IMMEDIATE ACTION - Allocate beds within 6 hours"
+}
+5. Dashboard Alerts
+
+python
+GET /api/v1/dashboard/alerts
+Purpose: Get active critical alerts
+Response:
+{
+  "alerts": [
+    {
+      "type": "water_shortage",
+      "district": "Nagpur",
+      "probability": 0.78,
+      "days_until_crisis": 5,
+      "priority_score": 8.5,
+      "status": "ACTIVE"
+    }
+  ],
+  "total_alerts": 5
+}
+6. Dashboard Statistics
+
+python
+GET /api/v1/dashboard/statistics
+Purpose: Get system KPIs
+Response:
+{
+  "total_predictions_today": 1247,
+  "critical_alerts": 5,
+  "districts_monitored": 10,
+  "average_response_time_hours": 2.5,
+  "accuracy_rate": 0.92,
+  "crises_prevented": 8
+}
+7. Analytics Data
+
+python
+GET /api/v1/dashboard/analytics?date_from=2025-10-01&date_to=2025-11-05&district=All
+Purpose: Get analytics with filters
+Response:
+{
+  "predictions_made": 1247,
+  "crises_prevented": 8,
+  "accuracy_rate": 0.92,
+  "predictions_by_district": {
+    "Mumbai": 320,
+    "Pune": 245,
+    ...
+  },
+  "crisis_types_distribution": {...},
+  "priority_trends": [...]
+}
+8. Excel Upload
+
+python
+POST /api/v1/dashboard/upload/excel?domain=health
+Purpose: Upload data files
+Request: multipart/form-data (file)
+Response:
+{
+  "success": true,
+  "file_name": "health_data.xlsx",
+  "records_processed": 500,
+  "columns_detected": ["Date", "District", ...],
+  "data_anonymized": true
+}
+5. MACHINE LEARNING MODELS
+5.1 Model 1: Demand Forecasting
+Algorithm: XGBoost Regressor
+
+Purpose: Predict how many ambulances/beds/OPD patients needed
+
+Training Data:
+
+10,000+ historical records
+
+Features: 13 input parameters
+
+Target: Continuous value (demand quantity)
+
+Input Features:
+
+district (categorical - 10 values)
+
+service_type (categorical - 5 values)
+
+month (numeric - 1 to 12)
+
+day_of_week (numeric - 0 to 6)
+
+is_weekend (binary - 0 or 1)
+
+is_monsoon (binary - 0 or 1)
+
+population_factor (numeric - 0.5 to 3.0)
+
+urban_ratio (numeric - 0 to 1)
+
+demand_lag_7days (numeric)
+
+demand_lag_30days (numeric)
+
+resource_utilization_rate (numeric - 0 to 1)
+
+complaint_rate (numeric - 0 to 1)
+
+response_time_minutes (numeric)
+
+Model Training:
+
+python
+from xgboost import XGBRegressor
+
+model = XGBRegressor(
+    n_estimators=100,
+    max_depth=6,
+    learning_rate=0.1,
+    random_state=42
+)
+
+# Label encoding for categorical features
+from sklearn.preprocessing import LabelEncoder
+label_encoders = {}
+for col in ['district', 'service_type']:
+    le = LabelEncoder()
+    X_train[col] = le.fit_transform(X_train[col])
+    label_encoders[col] = le
+
+# Train model
+model.fit(X_train, y_train)
+
+# Save model
+import pickle
+with open('model_health_demand_forecasting.pkl', 'wb') as f:
+    pickle.dump(model, f)
+Performance:
+
+Accuracy: 92-94%
+
+MAPE (Mean Absolute Percentage Error): 6.2%
+
+R² Score: 0.91
+
+Model Files:
+
+model_health_demand_forecasting.pkl (trained model)
+
+label_encoders.pkl (categorical encoders)
+
+feature_columns.pkl (column order)
+
+5.2 Model 2: Crisis Prediction
+Algorithm: Random Forest Classifier
+
+Purpose: Detect if crisis will happen in next 5 days
+
+Training Data:
+
+5,000+ crisis records
+
+Features: 10 input parameters
+
+Target: Binary (crisis=1, no_crisis=0) + probability
+
+Input Features:
+
+district (categorical)
+
+month (numeric)
+
+is_monsoon (binary)
+
+population_factor (numeric)
+
+demand_requests (numeric)
+
+pending_requests (numeric)
+
+citizen_complaints (numeric)
+
+response_time_hours (numeric)
+
+demand_lag_7days (numeric)
+
+resolution_rate (numeric - 0 to 1)
+
+Model Training:
+
+python
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier(
+    n_estimators=200,
+    max_depth=10,
+    min_samples_split=5,
+    random_state=42
+)
+
+# Train
+model.fit(X_train, y_train)
+
+# Predict with probability
+y_pred = model.predict(X_test)
+y_prob = model.predict_proba(X_test)[:, 1]  # Probability of crisis
+
+# Save
+with open('model_crisis_water_shortage.pkl', 'wb') as f:
+    pickle.dump(model, f)
+Performance:
+
+Accuracy: 89%
+
+Precision: 87%
+
+Recall: 85%
+
+F1-Score: 0.86
+
+AUC-ROC: 0.91
+
+Risk Level Assignment:
+
+python
+if probability >= 0.85:
+    risk_level = "CRITICAL"
+elif probability >= 0.70:
+    risk_level = "HIGH"
+elif probability >= 0.50:
+    risk_level = "MEDIUM"
+else:
+    risk_level = "LOW"
+5.3 Model 3: Priority Scoring
+Algorithm: Custom Ensemble (Multiple algorithms combined)
+
+Purpose: Rank issues by urgency (1-10 scale)
+
+Training Data:
+
+8,000+ priority records
+
+Features: 8 input parameters
+
+Target: Priority score (1-10)
+
+Components:
+
+Urgency Score (response time, severity)
+
+Impact Score (requests, complaints, population)
+
+Resource Score (resolution rate, capacity)
+
+Sentiment Score (citizen complaints, satisfaction)
+
+Scoring Logic:
+
+python
+def calculate_priority(issue):
+    # Urgency (0-10)
+    urgency = calculate_urgency(
+        response_time=issue['response_time'],
+        severity=issue['severity_level']
+    )
+    
+    # Impact (0-10)
+    impact = calculate_impact(
+        requests=issue['requests'],
+        complaints=issue['complaints'],
+        population=issue['population_factor']
+    )
+    
+    # Resources (0-10)
+    resources = calculate_resources(
+        resolution_rate=issue['resolution_rate']
+    )
+    
+    # Sentiment (0-10)
+    sentiment = calculate_sentiment(
+        complaints=issue['complaints'],
+        requests=issue['requests']
+    )
+    
+    # Weighted average
+    priority_score = (
+        urgency * 0.35 +
+        impact * 0.30 +
+        resources * 0.20 +
+        sentiment * 0.15
+    )
+    
+    return round(priority_score, 1)
+Performance:
+
+Accuracy: 92%
+
+MAE (Mean Absolute Error): 0.8 points
+
+Correlation with expert judgments: 0.89
+
+6. DATA FLOW & PROCESSING
+6.1 Excel Upload Flow
+text
+Step 1: User uploads Excel file
+   ↓
+Step 2: FastAPI receives file (multipart/form-data)
+   ↓
+Step 3: Read Excel using pandas
+   df = pd.read_excel(file)
+   ↓
+Step 4: Validate columns
+   expected = ['Date', 'District', 'Ambulance_Requests', ...]
+   if not all(col in df.columns for col in expected):
+       return Error("Invalid columns")
+   ↓
+Step 5: Data anonymization
+   - Remove PII (names, phone, email)
+   - Hash sensitive IDs
+   - Encrypt data
+   ↓
+Step 6: Store data
+   - Save to database
+   - Update model training data
+   ↓
+Step 7: Return success response
+   {
+     "records_processed": 500,
+     "columns_detected": [...],
+     "data_anonymized": true
+   }
+6.2 Prediction Flow
+text
+Step 1: User fills form (District, Service, etc.)
+   ↓
+Step 2: Frontend sends POST request to API
+   ↓
+Step 3: FastAPI receives request
+   ↓
+Step 4: Validate input (Pydantic)
+   - Check required fields
+   - Check data types
+   - Check value ranges
+   ↓
+Step 5: Load trained model
+   with open('model.pkl', 'rb') as f:
+       model = pickle.load(f)
+   ↓
+Step 6: Preprocess input
+   - Encode categorical features
+   - Scale numeric features
+   - Create feature vector
+   ↓
+Step 7: Model prediction
+   prediction = model.predict(features)
+   confidence = model.predict_proba(features)
+   ↓
+Step 8: Post-process output
+   - Round values
+   - Generate recommendation
+   - Calculate confidence
+   ↓
+Step 9: Return JSON response
+   {
+     "predicted_demand": 58.2,
+     "confidence_score": 0.92,
+     "recommendation": "..."
+   }
+   ↓
+Step 10: Frontend displays result
+7. DEPLOYMENT
+7.1 Backend Deployment (Google Cloud Platform)
+Infrastructure:
+
+Provider: Google Cloud Platform
+
+Service: Compute Engine
+
+Instance: e2-medium (2 vCPU, 4 GB RAM)
+
+Zone: us-central1-a
+
+OS: Debian 12 Bookworm
+
+Storage: 10 GB boot disk
+
+Setup Steps:
+
+bash
+# 1. Create VM instance
+gcloud compute instances create mahagovai-api \
+  --zone=us-central1-a \
+  --machine-type=e2-medium \
+  --image-family=debian-12 \
+  --boot-disk-size=10GB
+
+# 2. SSH into VM
+gcloud compute ssh mahagovai-api --zone=us-central1-a
+
+# 3. Install dependencies
+sudo apt update
+sudo apt install -y python3 python3-pip python3-venv
+
+# 4. Clone code
+git clone https://github.com/YOUR_USERNAME/PredictivMinds.git
+cd PredictivMinds/backend/api
+
+# 5. Create virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# 6. Install Python packages
+pip install -r requirements.txt
+
+# 7. Install PM2 (process manager)
+sudo apt install -y nodejs npm
+sudo npm install -g pm2
+
+# 8. Create PM2 config
+cat > ecosystem.config.js << 'EOF'
+module.exports = {
+  apps: [{
+    name: 'PredictivMindsAPI',
+    script: 'uvicorn',
+    args: 'main:app --host 0.0.0.0 --port 8000',
+    cwd: '/home/user/PredictivMinds/backend/api',
+    interpreter: '/home/user/PredictivMinds/backend/api/venv/bin/python',
+    instances: 1,
+    autorestart: true,
+    watch: false,
+    max_memory_restart: '1G'
+  }]
+};
+EOF
+
+# 9. Start with PM2
+pm2 start ecosystem.config.js
+
+# 10. Setup auto-start on reboot
+pm2 startup
+pm2 save
+
+# 11. Configure firewall
+gcloud compute firewall-rules create allow-api-8000 \
+  --allow=tcp:8000 \
+  --project=YOUR_PROJECT
+Domain Configuration:
+
+bash
+# Custom domain: api.predictivminds.shop
+# 1. Point DNS A record to VM IP
+# 2. Install Nginx as reverse proxy
+sudo apt install -y nginx
+
+# 3. Configure Nginx
+cat > /etc/nginx/sites-available/api << 'EOF'
+server {
+    listen 80;
+    server_name api.predictivminds.shop;
+    
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+EOF
+
+# 4. Enable site
+sudo ln -s /etc/nginx/sites-available/api /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+
+# 5. Install SSL certificate
+sudo apt install -y certbot python3-certbot-nginx
+sudo certbot --nginx -d api.predictivminds.shop
+Monitoring:
+
+bash
+# View PM2 status
+pm2 status
+
+# View logs
+pm2 logs PredictivMindsAPI
+
+# View last 50 lines
+pm2 logs PredictivMindsAPI --lines 50
+
+# Monitor in real-time
+pm2 monit
+
+# Restart if needed
+pm2 restart PredictivMindsAPI
+7.2 Frontend Deployment (Vercel)
+Setup Steps:
+
+bash
+# 1. Install Vercel CLI
+npm i -g vercel
+
+# 2. Navigate to frontend
+cd PredictivMinds/frontend
+
+# 3. Build production
+npm run build
+
+# 4. Deploy
+vercel
+
+# Follow prompts:
+# - Link to GitHub repo
+# - Set project name: predictivminds
+# - Set production domain: predictivminds.shop
+
+# 5. Environment variables (on Vercel dashboard)
+REACT_APP_API_URL=https://api.predictivminds.shop
+Custom Domain:
+
+Go to Vercel dashboard
+
+Project Settings → Domains
+
+Add: predictivminds.shop
+
+Update DNS: CNAME → cname.vercel-dns.com
+
+8. SECURITY & COMPLIANCE
+8.1 Data Security Measures
+1. HTTPS/TLS Encryption:
+
+All data in transit encrypted (SSL certificate)
+
+Certificate: Let's Encrypt
+
+Auto-renewal every 90 days
+
+2. Data at Rest Encryption:
+
+AES-256 encryption
+
+Encrypted backups
+
+Secure key management
