@@ -1,0 +1,105 @@
+2025-11-01 23:36:45 - MahaGovAI - INFO - 🚀 Starting Maharashtra Governance AI v1.0.0
+2025-11-01 23:36:45 - MahaGovAI - INFO - ============================================================
+2025-11-01 23:36:46 - MahaGovAI - INFO - ✅ Demand Forecasting Model loaded (R² = 0.960)
+2025-11-01 23:36:46 - MahaGovAI - INFO - ✅ Crisis Prediction Model loaded (F1 = 0.992)
+2025-11-01 23:36:46 - MahaGovAI - INFO - ✅ Priority Scoring Engine loaded
+2025-11-01 23:36:46 - MahaGovAI - INFO - 🎉 All models loaded successfully!
+2025-11-01 23:36:46 - MahaGovAI - INFO - ✅ System ready to serve predictions
+2025-11-01 23:36:46 - MahaGovAI - INFO - ============================================================
+2025-11-01 23:51:28 - MahaGovAI - INFO - API Request: / from 127.0.0.1
+2025-11-01 23:51:34 - MahaGovAI - INFO - API Request: /health from 127.0.0.1
+2025-11-01 23:51:42 - MahaGovAI - INFO - API Request: /api/v1/predict/demand from 127.0.0.1
+2025-11-01 23:51:42 - MahaGovAI - INFO - Prediction: demand_forecasting for Mumbai
+2025-11-01 23:51:46 - MahaGovAI - INFO - API Request: /api/v1/predict/demand from 127.0.0.1
+2025-11-01 23:51:46 - MahaGovAI - INFO - Prediction: demand_forecasting for Kolhapur
+2025-11-01 23:51:50 - MahaGovAI - INFO - API Request: /api/v1/predict/demand from 127.0.0.1
+2025-11-01 23:51:50 - MahaGovAI - INFO - Prediction: demand_forecasting for Thane
+2025-11-01 23:51:53 - MahaGovAI - INFO - API Request: /api/v1/predict/demand from 127.0.0.1
+2025-11-01 23:51:53 - MahaGovAI - INFO - Prediction: demand_forecasting for Pune
+2025-11-01 23:51:58 - MahaGovAI - INFO - API Request: /api/v1/predict/demand from 127.0.0.1
+2025-11-01 23:51:58 - MahaGovAI - INFO - Prediction: demand_forecasting for Nagpur
+2025-11-01 23:52:04 - MahaGovAI - INFO - API Request: /api/v1/predict/crisis from 127.0.0.1
+2025-11-01 23:52:04 - MahaGovAI - INFO - Prediction: crisis_prediction for Mumbai
+2025-11-01 23:52:10 - MahaGovAI - INFO - API Request: /api/v1/predict/crisis from 127.0.0.1
+2025-11-01 23:52:10 - MahaGovAI - INFO - Prediction: crisis_prediction for Nagpur
+2025-11-01 23:52:14 - MahaGovAI - INFO - API Request: /api/v1/predict/crisis from 127.0.0.1
+2025-11-01 23:52:14 - MahaGovAI - INFO - Prediction: crisis_prediction for Pune
+2025-11-01 23:52:18 - MahaGovAI - INFO - API Request: /api/v1/predict/crisis from 127.0.0.1
+2025-11-01 23:52:18 - MahaGovAI - INFO - Prediction: crisis_prediction for Kolhapur
+2025-11-01 23:52:23 - MahaGovAI - INFO - API Request: /api/v1/predict/crisis from 127.0.0.1
+2025-11-01 23:52:23 - MahaGovAI - INFO - Prediction: crisis_prediction for Thane
+2025-11-01 23:52:29 - MahaGovAI - INFO - API Request: /api/v1/calculate/priority from 127.0.0.1
+2025-11-01 23:52:29 - MahaGovAI - INFO - Prediction: priority_scoring for Mumbai
+2025-11-01 23:52:35 - MahaGovAI - INFO - API Request: /api/v1/calculate/priority from 127.0.0.1
+2025-11-01 23:52:35 - MahaGovAI - INFO - Prediction: priority_scoring for Nashik
+2025-11-01 23:52:41 - MahaGovAI - INFO - API Request: /api/v1/calculate/priority from 127.0.0.1
+2025-11-01 23:52:41 - MahaGovAI - INFO - Prediction: priority_scoring for Pune
+2025-11-01 23:52:46 - MahaGovAI - INFO - API Request: /api/v1/calculate/priority from 127.0.0.1
+2025-11-01 23:52:46 - MahaGovAI - INFO - Prediction: priority_scoring for Pune
+2025-11-01 23:52:51 - MahaGovAI - INFO - API Request: /api/v1/calculate/priority from 127.0.0.1
+2025-11-01 23:52:51 - MahaGovAI - INFO - Prediction: priority_scoring for Nagpur
+2025-11-01 23:52:56 - MahaGovAI - INFO - API Request: /api/v1/calculate/priority from 127.0.0.1
+2025-11-01 23:52:56 - MahaGovAI - INFO - Prediction: priority_scoring for Kolhapur
+2025-11-01 23:53:04 - MahaGovAI - INFO - API Request: /api/v1/dashboard/alerts from 127.0.0.1
+2025-11-01 23:53:11 - MahaGovAI - INFO - API Request: /api/v1/dashboard/statistics from 127.0.0.1
+2025-11-01 23:53:16 - MahaGovAI - INFO - API Request: /api/v1/dashboard/privacy-report from 127.0.0.1
+2025-11-01 23:57:25 - MahaGovAI - INFO - API Request: /api/v1/dashboard/upload/excel from 127.0.0.1
+2025-11-01 23:57:25 - MahaGovAI - INFO - File Upload: health_department_sample.xlsx (0.01 MB)
+2025-11-01 23:58:17 - MahaGovAI - INFO - API Request: /api/v1/dashboard/upload/excel from 127.0.0.1
+2025-11-01 23:58:17 - MahaGovAI - INFO - File Upload: infrastructure_department_sample.xlsx (0.01 MB)
+2025-11-01 23:58:48 - MahaGovAI - INFO - API Request: /api/v1/dashboard/upload/excel from 127.0.0.1
+2025-11-01 23:58:48 - MahaGovAI - INFO - File Upload: public_safety_department_sample.xlsx (0.01 MB)
+2025-11-04 11:24:24 - MahaGovAI - INFO - 🚀 Starting Maharashtra Governance AI v1.0.0
+2025-11-04 11:24:24 - MahaGovAI - INFO - ============================================================
+2025-11-04 11:24:24 - MahaGovAI - ERROR - Error in Model loading failed: [Errno 2] No such file or directory: 'models/health_demand_forecasting/model_health_demand_forecasting.pkl'
+2025-11-04 11:24:24 - MahaGovAI - ERROR - ❌ System startup failed - check model paths
+2025-11-04 11:24:24 - MahaGovAI - INFO - ============================================================
+2025-11-04 11:24:43 - MahaGovAI - INFO - 👋 Shutting down Maharashtra Governance AI API
+2025-11-04 11:55:08 - MahaGovAI - INFO - 🚀 Starting Maharashtra Governance AI v1.0.0
+2025-11-04 11:55:08 - MahaGovAI - INFO - ============================================================
+2025-11-04 11:55:08 - MahaGovAI - ERROR - Error in Model loading failed: [Errno 2] No such file or directory: 'models/health_demand_forecasting/model_health_demand_forecasting.pkl'
+2025-11-04 11:55:08 - MahaGovAI - ERROR - ❌ System startup failed - check model paths
+2025-11-04 11:55:08 - MahaGovAI - INFO - ============================================================
+2025-11-04 11:55:19 - MahaGovAI - INFO - 👋 Shutting down Maharashtra Governance AI API
+2025-11-04 12:00:53 - MahaGovAI - INFO - 🚀 Starting Maharashtra Governance AI v1.0.0
+2025-11-04 12:00:53 - MahaGovAI - INFO - ============================================================
+2025-11-04 12:00:53 - MahaGovAI - ERROR - Error in Model loading failed: [Errno 2] No such file or directory: 'models/health_demand_forecasting/model_health_demand_forecasting.pkl'
+2025-11-04 12:00:53 - MahaGovAI - ERROR - ❌ System startup failed - check model paths
+2025-11-04 12:00:53 - MahaGovAI - INFO - ============================================================
+2025-11-04 12:01:00 - MahaGovAI - INFO - API Request: / from 127.0.0.1
+2025-11-04 12:01:07 - MahaGovAI - INFO - API Request: /health from 127.0.0.1
+2025-11-04 12:01:14 - MahaGovAI - INFO - API Request: /api/v1/predict/demand from 127.0.0.1
+2025-11-04 12:01:14 - MahaGovAI - ERROR - Error in Demand prediction failed: 'NoneType' object is not subscriptable
+2025-11-04 12:01:23 - MahaGovAI - INFO - API Request: /api/v1/predict/demand from 127.0.0.1
+2025-11-04 12:01:23 - MahaGovAI - ERROR - Error in Demand prediction failed: 'NoneType' object is not subscriptable
+2025-11-04 12:05:35 - MahaGovAI - INFO - API Request: /api/v1/predict/demand from 127.0.0.1
+2025-11-04 12:05:35 - MahaGovAI - ERROR - Error in Demand prediction failed: 'NoneType' object is not subscriptable
+2025-11-04 12:09:58 - MahaGovAI - INFO - 👋 Shutting down Maharashtra Governance AI API
+2025-11-04 12:09:59 - MahaGovAI - INFO - 🚀 Starting Maharashtra Governance AI v1.0.0
+2025-11-04 12:09:59 - MahaGovAI - INFO - ============================================================
+2025-11-04 12:09:59 - MahaGovAI - INFO - ✅ Demand Forecasting Model loaded (R² = 0.960)
+2025-11-04 12:09:59 - MahaGovAI - INFO - ✅ Crisis Prediction Model loaded (F1 = 0.992)
+2025-11-04 12:09:59 - MahaGovAI - INFO - ✅ Priority Scoring Engine loaded
+2025-11-04 12:09:59 - MahaGovAI - INFO - 🎉 All models loaded successfully!
+2025-11-04 12:09:59 - MahaGovAI - INFO - ✅ System ready to serve predictions
+2025-11-04 12:09:59 - MahaGovAI - INFO - ============================================================
+2025-11-04 12:10:00 - MahaGovAI - INFO - 🚀 Starting Maharashtra Governance AI v1.0.0
+2025-11-04 12:10:00 - MahaGovAI - INFO - ============================================================
+2025-11-04 12:10:00 - MahaGovAI - INFO - ✅ Demand Forecasting Model loaded (R² = 0.960)
+2025-11-04 12:10:00 - MahaGovAI - INFO - ✅ Crisis Prediction Model loaded (F1 = 0.992)
+2025-11-04 12:10:00 - MahaGovAI - INFO - ✅ Priority Scoring Engine loaded
+2025-11-04 12:10:00 - MahaGovAI - INFO - 🎉 All models loaded successfully!
+2025-11-04 12:10:00 - MahaGovAI - INFO - ✅ System ready to serve predictions
+2025-11-04 12:10:00 - MahaGovAI - INFO - ============================================================
+2025-11-04 12:12:27 - MahaGovAI - INFO - API Request: /api/v1/predict/demand from 127.0.0.1
+2025-11-04 12:12:27 - MahaGovAI - INFO - Prediction: demand_forecasting for Kolhapur
+2025-11-04 12:16:48 - MahaGovAI - INFO - 👋 Shutting down Maharashtra Governance AI API
+2025-11-04 16:00:43 - MahaGovAI - INFO - 🚀 Starting Maharashtra Governance AI v1.0.0
+2025-11-04 16:00:43 - MahaGovAI - INFO - ============================================================
+2025-11-04 16:00:44 - MahaGovAI - INFO - ✅ Demand Forecasting Model loaded (R² = 0.960)
+2025-11-04 16:00:44 - MahaGovAI - INFO - ✅ Crisis Prediction Model loaded (F1 = 0.992)
+2025-11-04 16:00:44 - MahaGovAI - INFO - ✅ Priority Scoring Engine loaded
+2025-11-04 16:00:44 - MahaGovAI - INFO - 🎉 All models loaded successfully!
+2025-11-04 16:00:44 - MahaGovAI - INFO - ✅ System ready to serve predictions
+2025-11-04 16:00:44 - MahaGovAI - INFO - ============================================================
+2025-11-04 16:01:19 - MahaGovAI - INFO - 👋 Shutting down Maharashtra Governance AI API

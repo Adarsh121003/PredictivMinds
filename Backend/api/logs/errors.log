@@ -1,0 +1,9 @@
+2025-11-04 11:24:24 - MahaGovAI - ERROR - Error in Model loading failed: [Errno 2] No such file or directory: 'models/health_demand_forecasting/model_health_demand_forecasting.pkl'
+2025-11-04 11:24:24 - MahaGovAI - ERROR - ❌ System startup failed - check model paths
+2025-11-04 11:55:08 - MahaGovAI - ERROR - Error in Model loading failed: [Errno 2] No such file or directory: 'models/health_demand_forecasting/model_health_demand_forecasting.pkl'
+2025-11-04 11:55:08 - MahaGovAI - ERROR - ❌ System startup failed - check model paths
+2025-11-04 12:00:53 - MahaGovAI - ERROR - Error in Model loading failed: [Errno 2] No such file or directory: 'models/health_demand_forecasting/model_health_demand_forecasting.pkl'
+2025-11-04 12:00:53 - MahaGovAI - ERROR - ❌ System startup failed - check model paths
+2025-11-04 12:01:14 - MahaGovAI - ERROR - Error in Demand prediction failed: 'NoneType' object is not subscriptable
+2025-11-04 12:01:23 - MahaGovAI - ERROR - Error in Demand prediction failed: 'NoneType' object is not subscriptable
+2025-11-04 12:05:35 - MahaGovAI - ERROR - Error in Demand prediction failed: 'NoneType' object is not subscriptable

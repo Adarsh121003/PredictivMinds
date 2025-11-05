@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.git/
+.env
+logs/*.log
+test.json
+postman_collection.json
+*.md

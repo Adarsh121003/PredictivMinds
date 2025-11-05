@@ -1,0 +1,56 @@
+{"timestamp": "2025-11-01T23:51:28.091881", "endpoint": "/", "method": "GET", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:51:34.242512", "endpoint": "/health", "method": "GET", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:51:42.267283", "endpoint": "/api/v1/predict/demand", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:51:42.296016", "model": "demand_forecasting", "ip_address": "127.0.0.1", "district": "Mumbai", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:51:46.460511", "endpoint": "/api/v1/predict/demand", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:51:46.470965", "model": "demand_forecasting", "ip_address": "127.0.0.1", "district": "Kolhapur", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:51:50.167872", "endpoint": "/api/v1/predict/demand", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:51:50.193608", "model": "demand_forecasting", "ip_address": "127.0.0.1", "district": "Thane", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:51:53.871827", "endpoint": "/api/v1/predict/demand", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:51:53.916863", "model": "demand_forecasting", "ip_address": "127.0.0.1", "district": "Pune", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:51:58.985336", "endpoint": "/api/v1/predict/demand", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:51:58.995408", "model": "demand_forecasting", "ip_address": "127.0.0.1", "district": "Nagpur", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:04.929348", "endpoint": "/api/v1/predict/crisis", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:04.942864", "model": "crisis_prediction", "ip_address": "127.0.0.1", "district": "Mumbai", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:10.230331", "endpoint": "/api/v1/predict/crisis", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:10.244377", "model": "crisis_prediction", "ip_address": "127.0.0.1", "district": "Nagpur", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:14.416652", "endpoint": "/api/v1/predict/crisis", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:14.429082", "model": "crisis_prediction", "ip_address": "127.0.0.1", "district": "Pune", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:18.700603", "endpoint": "/api/v1/predict/crisis", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:18.712546", "model": "crisis_prediction", "ip_address": "127.0.0.1", "district": "Kolhapur", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:23.706738", "endpoint": "/api/v1/predict/crisis", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:23.758801", "model": "crisis_prediction", "ip_address": "127.0.0.1", "district": "Thane", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:29.787500", "endpoint": "/api/v1/calculate/priority", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:29.788226", "model": "priority_scoring", "ip_address": "127.0.0.1", "district": "Mumbai", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:35.027308", "endpoint": "/api/v1/calculate/priority", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:35.035352", "model": "priority_scoring", "ip_address": "127.0.0.1", "district": "Nashik", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:41.239442", "endpoint": "/api/v1/calculate/priority", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:41.247473", "model": "priority_scoring", "ip_address": "127.0.0.1", "district": "Pune", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:46.160391", "endpoint": "/api/v1/calculate/priority", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:46.168371", "model": "priority_scoring", "ip_address": "127.0.0.1", "district": "Pune", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:51.098046", "endpoint": "/api/v1/calculate/priority", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:51.105993", "model": "priority_scoring", "ip_address": "127.0.0.1", "district": "Nagpur", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:52:56.574755", "endpoint": "/api/v1/calculate/priority", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:52:56.582636", "model": "priority_scoring", "ip_address": "127.0.0.1", "district": "Kolhapur", "action": "MODEL_PREDICTION", "success": true}
+{"timestamp": "2025-11-01T23:53:04.179032", "endpoint": "/api/v1/dashboard/alerts", "method": "GET", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:53:11.043467", "endpoint": "/api/v1/dashboard/statistics", "method": "GET", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:53:16.028337", "endpoint": "/api/v1/dashboard/privacy-report", "method": "GET", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:57:25.764894", "endpoint": "/api/v1/dashboard/upload/excel", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:57:25.891610", "filename": "health_department_sample.xlsx", "file_size_mb": 0.01, "domain": "health", "ip_address": "127.0.0.1", "action": "FILE_UPLOAD"}
+{"timestamp": "2025-11-01T23:58:17.003522", "endpoint": "/api/v1/dashboard/upload/excel", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:58:17.016671", "filename": "infrastructure_department_sample.xlsx", "file_size_mb": 0.01, "domain": "infrastructure", "ip_address": "127.0.0.1", "action": "FILE_UPLOAD"}
+{"timestamp": "2025-11-01T23:58:48.299461", "endpoint": "/api/v1/dashboard/upload/excel", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-01T23:58:48.311717", "filename": "public_safety_department_sample.xlsx", "file_size_mb": 0.01, "domain": "public_safety", "ip_address": "127.0.0.1", "action": "FILE_UPLOAD"}
+{"timestamp": "2025-11-04T11:24:24.699185", "error_type": "FileNotFoundError", "error_message": "[Errno 2] No such file or directory: 'models/health_demand_forecasting/model_health_demand_forecasting.pkl'", "context": "Model loading failed", "action": "ERROR"}
+{"timestamp": "2025-11-04T11:55:08.071506", "error_type": "FileNotFoundError", "error_message": "[Errno 2] No such file or directory: 'models/health_demand_forecasting/model_health_demand_forecasting.pkl'", "context": "Model loading failed", "action": "ERROR"}
+{"timestamp": "2025-11-04T12:00:53.888800", "error_type": "FileNotFoundError", "error_message": "[Errno 2] No such file or directory: 'models/health_demand_forecasting/model_health_demand_forecasting.pkl'", "context": "Model loading failed", "action": "ERROR"}
+{"timestamp": "2025-11-04T12:01:00.505361", "endpoint": "/", "method": "GET", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-04T12:01:07.711752", "endpoint": "/health", "method": "GET", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-04T12:01:14.648872", "endpoint": "/api/v1/predict/demand", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-04T12:01:14.656559", "error_type": "TypeError", "error_message": "'NoneType' object is not subscriptable", "context": "Demand prediction failed", "action": "ERROR"}
+{"timestamp": "2025-11-04T12:01:23.055892", "endpoint": "/api/v1/predict/demand", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-04T12:01:23.063498", "error_type": "TypeError", "error_message": "'NoneType' object is not subscriptable", "context": "Demand prediction failed", "action": "ERROR"}
+{"timestamp": "2025-11-04T12:05:35.741732", "endpoint": "/api/v1/predict/demand", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-04T12:05:35.749553", "error_type": "TypeError", "error_message": "'NoneType' object is not subscriptable", "context": "Demand prediction failed", "action": "ERROR"}
+{"timestamp": "2025-11-04T12:12:27.074251", "endpoint": "/api/v1/predict/demand", "method": "POST", "ip_address": "127.0.0.1", "action": "API_REQUEST"}
+{"timestamp": "2025-11-04T12:12:27.079328", "model": "demand_forecasting", "ip_address": "127.0.0.1", "district": "Kolhapur", "action": "MODEL_PREDICTION", "success": true}

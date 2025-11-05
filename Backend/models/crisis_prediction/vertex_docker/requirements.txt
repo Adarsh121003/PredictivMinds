@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+joblib
+xgboost
+numpy
+google-cloud-storage
